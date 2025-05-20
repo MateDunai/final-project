@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <!-- Normalize CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+        <!-- Sora font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <title>PromptWise</title>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <div id="logo-name">
+                        <span id="logo-name-header">PROMPT<span class="highlight">WISE</span></span>
+                        <span id="logo-slogan">Smart Prompts. Smarter You</span>
+                    </div>
+                </div>
+                <a href="#how-it-works">How it Works</a>
+            </nav>
+        </header>
+        <main>
+            <div class="hero">
+                <h1 id="hero-title">Smarter <span class="highlight">Learning</span> Starts Here</h1>
+                <p id="hero-description">Smart prompts tailored to boost your learning and creativity. anytime, anywhere.</p>
+                <a href="#prompt-generator" id="cta-btn-link" style="text-decoration: none;"><button id="cta-btn">Get Started</button></a> 
+            </div>
+            <section class="prompt-generator-container" id="prompt-generator"> 
+                <h2>Prompt Generator</h2>
+                <div> 
+                    <form method="POST" class="input-field"> 
+                        <input type="text" name="topic" placeholder="Enter a topic to learn about..." required>
+                        <button type="submit">Generate Prompt</button>
+                    </form>
+                    {% if result %}
+                    <div class="output-actions">
+                        <textarea readonly rows="6" cols="60" id="output-textarea">{{ result }}</textarea>
+                        <div class="action-buttons">
+                            <button id="copy-btn">Copy</button>
+                            <button id="clear-btn">Clear</button>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </section>
+            <section id="how-it-works"> 
+                <h3>How It Works</h3>
+                <p>Enter a topic, and the AI tutor generates a detailed prompt you can use to ask any AI assistant, plus follow-up questions for deeper learning.</p>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2025 PromptWise. All rights reserved.</p>
+        </footer>
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+    </body>
+</html>
