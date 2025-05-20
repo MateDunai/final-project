@@ -1,5 +1,4 @@
 # PromptWise: AI Learning Prompt Generator
-#### Video Demo: (https://youtu.be/n6_oI3FOnDI?si=S6AO6pp9pTl6D3Y_)
 #### Description: 
 
 PromptWise is an innovative web application designed to enhance the learning experience with AI by generating structured, educational prompts. This project addresses a common challenge in AI-assisted learning: formulating effective questions that maximize learning outcomes.
